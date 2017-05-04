@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+ssh dacb@128.208.236.235 "cat /work/data/NCBI_plasmids/plasmid/plasmid.1.genomic.gbff /work/data/NCBI_plasmids/plasmid/plasmid.2.genomic.gbff /work/data/NCBI_plasmids/plasmid/plasmid.3.genomic.gbff" | awk '/^LOCUS/ { printf("chr - %s %s %d %d 145,255,145\n", $2, $2, 1, $3); }' 

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./circos/circos-0.69-4/bin/circos -conf circos.conf
