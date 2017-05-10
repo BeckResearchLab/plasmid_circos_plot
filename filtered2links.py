@@ -22,6 +22,10 @@ fixed = mdf["sseqid"].apply(lambda x : x.split("|")[1].split(".")[0])
 mdf["sseqid"] = fixed
 mdf.rename(columns = { "length" : "alength" }, inplace=True)
 
+print("reading in organism names")
+odf = pd.read_csv("organisms.txt", sep='\t', header=None, 
+        names=["name", "organism"])
+
 print("merging data frames")
 # join mdf twice, once with lengths on qseqid and then on sseqid
 df = pd.merge(mdf, kdf, left_on="qseqid", right_on="name")
@@ -30,6 +34,14 @@ df.rename(columns = { "length" : "qlength"}, inplace=True)
 df = pd.merge(df, kdf, left_on="sseqid", right_on="name")
 df.drop("name", 1, inplace=True);
 df.rename(columns = { "length" : "slength"}, inplace=True)
+# now join to organisms
+df = pd.merge(df, odf, left_on="qseqid", right_on="name")
+df.drop("name", 1, inplace=True);
+df.rename(columns = { "organism" : "qorganism"}, inplace=True)
+df = pd.merge(df, odf, left_on="sseqid", right_on="name")
+df.drop("name", 1, inplace=True);
+df.rename(columns = { "organism" : "sorganism"}, inplace=True)
+df["color"] = df.apply(lambda x : "color=black" if x['qorganism'] == x['sorganism'] else "color=red", axis=1)
 
 print("filtering out redundant plasmids")
 # remove any matches that are > 50% length of either
@@ -41,5 +53,5 @@ df = df[(qscrit) & (qqcrit) & (scrit)]
 print(df.size)
 
 print("writing to 'links.txt'")
-links = df[["qseqid", "qstart", "qend", "sseqid", "sstart", "send"]].copy()
+links = df[["qseqid", "qstart", "qend", "sseqid", "sstart", "send", "color"]].copy()
 links.to_csv("links.txt", sep='\t', quoting=csv.QUOTE_NONE, header=False, index=False)
