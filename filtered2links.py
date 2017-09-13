@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+FILTER_LENGTH = 5000
+
 import csv
 
 import pandas as pd
@@ -60,6 +62,11 @@ print(df.size)
 df = df[(qssame) & (qscrit) & (qqcrit) & (scrit)]
 print(df.size)
 """
+# optional size handling is here
+scrit = df["alength"] > FILTER_LENGTH
+print(df.size)
+df = df[(scrit)]
+print(df.size)
 
 print("writing to 'links.txt'")
 links = df[["qseqid", "qstart", "qend", "sseqid", "sstart", "send", "color"]].copy()

@@ -11,5 +11,6 @@ Circos plot showing possible recombination sites from NCBI all plasmid database
 * ./make_organisms.py
 * ./make_karyotype.py
 * ./filtered2links.py
-* make_chromolist
+* ./make_chromolist
 * edit circos.conf and update the chromosomes list
+* ./run
