@@ -1,3 +1,0 @@
-#!/bin/bash
-
-sed "s/ref|//g" filtered_matches.txt | awk -F'\t' '{ split($1, s1, "."); split($2, s2, "."); print s1[1], $7, $8, s2[1], $9, $10 }' > links.txt
