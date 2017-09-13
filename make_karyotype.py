@@ -7,18 +7,17 @@ import pandas as pd
 gbFile = '/work/data/NCBI_plasmids/plasmid/ncbi_plasmid.gbff'
 
 colors = {
-    "Yersinia" : "50,0,15",
-    "Escherichia" : "103,0,31",
-    "Klebsiella" : "178,24,43",
-    "Staphylococcus" : "214,96,77",
-    "Salmonella" : "244,165,130",
-    "Acinetobacter" : "253,219,199",
-    "Enterococcus" : "209,229,240",
-    "Enterobacter" : "146,197,222",
-    "Shigella" : "67,147,195",
-    "Citrobacter" : "33,102,172",
-    "Borrelia" : "5,48,97",
-    "Lactobacillus" : "5,20,45"
+    "Staphylococcus" : "84,48,5",
+    "Enterococcus" : "140,81,10",
+    "Lactobacillus" : "191,129,45",
+    "Bacillus" : "223,194,125",
+    "Enterobacter" : "199,234,229",
+    "Escherichia" : "128,205,193",
+    "Klebsiella" : "53,151,143",
+    "Salmonella" : "1,102,94",
+    "Yersinia" : "0,60,48",
+    "Borrelia" : "246,232,195",
+    "Borreliella" : "246,232,195"
 }
 
 data = []
@@ -28,6 +27,7 @@ for record in SeqIO.parse(gbFile, "genbank"):
     id = record.id.split('.')[0]
     color = "255,255,255"
     genus = record.annotations["organism"].split(" ")[0]
+    genus = genus.replace("[", "").replace("]", "")
     taxonomy = '_'.join(record.annotations["taxonomy"])
     if genus in colors.keys():
         color = colors[genus]

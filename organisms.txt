@@ -65,8 +65,8 @@ NC_009602	Escherichia coli
 NC_010076	Bacillus thuringiensis serovar israelensis
 NC_010111	Staphylococcus aureus
 NC_007772	Clostridium perfringens CPE str. F4969
-NC_006828	[Haemophilus] parasuis
-NC_006829	[Haemophilus] parasuis
+NC_006828	Haemophilus parasuis
+NC_006829	Haemophilus parasuis
 NC_007928	Staphylococcus aureus
 NC_007931	Staphylococcus aureus
 NC_005018	Klebsiella pneumoniae
@@ -191,7 +191,7 @@ NC_012627	Chlamydia trachomatis
 NC_012628	Lactobacillus plantarum
 NC_012630	Chlamydia trachomatis
 NC_012631	Chlamydia trachomatis
-NC_012661	[Haemophilus] parasuis
+NC_012661	Haemophilus parasuis
 NC_012690	Escherichia coli
 NC_012692	Escherichia coli
 NC_012882	Escherichia coli
@@ -661,7 +661,7 @@ NC_019205	Pasteurella multocida
 NC_019209	Pasteurella multocida
 NC_019210	Zymomonas mobilis subsp. mobilis
 NC_019213	Enterococcus faecalis
-NC_019214	[Haemophilus] parasuis
+NC_019214	Haemophilus parasuis
 NC_019217	uncultured bacterium HHV216
 NC_019219	Lactobacillus plantarum
 NC_019220	Burkholderia pseudomallei
@@ -784,7 +784,7 @@ NC_019244	Periwinkle leaf yellowing phytoplasma
 NC_019245	Periwinkle leaf yellowing phytoplasma
 NC_019251	Shigella flexneri
 NC_019262	Aeromonas hydrophila
-NC_019361	[Haemophilus] parasuis
+NC_019361	Haemophilus parasuis
 NC_019328	Pseudomonas syringae
 NC_019353	Leuconostoc mesenteroides subsp. mesenteroides
 NC_019338	Arthrobacter sp. J3.37
@@ -925,7 +925,7 @@ NC_011797	Vibrio fluvialis
 NC_002579	Aggregatibacter actinomycetemcomitans
 NC_005245	Avibacterium paragallinarum
 NC_010912	Avibacterium paragallinarum
-NC_005329	[Haemophilus] ducreyi
+NC_005329	Haemophilus ducreyi
 NC_002664	Histophilus somni
 NC_004345	Histophilus somni
 NC_002118	Coxiella burnetii
@@ -1189,7 +1189,7 @@ NC_021087	Enterobacter cloacae
 NC_021079	Klebsiella pneumoniae
 NC_021080	Rhodococcus fascians D188
 NC_021159	Aeromonas hydrophila
-NC_021186	[Haemophilus] parasuis
+NC_021186	Haemophilus parasuis
 NC_021187	Thermus sp. WG
 NC_021188	Thermus sp. WG
 NC_021198	Klebsiella pneumoniae subsp. pneumoniae KPX
@@ -1227,7 +1227,7 @@ NC_019282	Bacillus sp. DMV2
 NC_022333	Escherichia coli
 NC_022345	Pseudomonas aeruginosa
 NC_022346	Pseudomonas aeruginosa
-NC_022367	[Haemophilus] parasuis
+NC_022367	Haemophilus parasuis
 NC_022368	Bacillaceae bacterium JMAK1
 NC_022375	Escherichia coli
 NC_022437	Pseudomonas fluorescens R124
@@ -1316,7 +1316,7 @@ NC_010926	Neisseria lactamica
 NC_010928	Neisseria lactamica
 NC_010931	Neisseria lactamica
 NC_004758	Neisseria meningitidis
-NC_001735	[Enterobacter] aerogenes
+NC_001735	Enterobacter aerogenes
 NC_014227	Pantoea agglomerans
 NC_005911	Hafnia alvei
 NC_016036	Morganella morganii
@@ -1436,8 +1436,8 @@ NC_017386	Ketogulonicigenium vulgare WSH-001
 NC_004930	Lactococcus lactis subsp. cremoris
 NC_014232	Escherichia coli ETEC 1392/75
 NC_014247	Rhodococcus equi
-NC_019255	[Pasteurella] aerogenes
-NC_019979	[Pasteurella] aerogenes
+NC_019255	Pasteurella aerogenes
+NC_019979	Pasteurella aerogenes
 NC_006145	Leuconostoc mesenteroides subsp. mesenteroides
 NC_001379	Lactobacillus helveticus subsp. jugurti
 NC_002102	Lactobacillus helveticus DSM 20075 = CGMCC 1.1877
@@ -1716,8 +1716,8 @@ NC_001740	Escherichia coli
 NC_001388	Clostridium perfringens
 NC_001393	Staphylococcus aureus
 NC_020227	Staphylococcus aureus
-NC_020885	[Pasteurella] aerogenes
-NC_020886	[Pasteurella] aerogenes
+NC_020885	Pasteurella aerogenes
+NC_020886	Pasteurella aerogenes
 NC_021652	Ruminiclostridium thermocellum
 NC_021653	Ruminiclostridium thermocellum
 NC_021665	Ruminiclostridium thermocellum
@@ -2133,8 +2133,8 @@ NC_015979	Lactobacillus sanfranciscensis TMW 1.1304
 NC_015980	Lactobacillus sanfranciscensis TMW 1.1304
 NC_014213	Meiothermus silvanus DSM 9946
 NC_014214	Meiothermus silvanus DSM 9946
-NC_012782	[Eubacterium] eligens ATCC 27750
-NC_012780	[Eubacterium] eligens ATCC 27750
+NC_012782	Eubacterium eligens ATCC 27750
+NC_012780	Eubacterium eligens ATCC 27750
 NC_017725	Borrelia garinii BgVir
 NC_017804	Borrelia garinii BgVir
 NC_011368	Rhizobium leguminosarum bv. trifolii WSM2304
@@ -2758,7 +2758,7 @@ NC_012164	Borreliella spielmanii A14S
 NC_012173	Borreliella spielmanii A14S
 NC_012183	Borreliella spielmanii A14S
 NC_018639	Chlamydia psittaci WC
-NC_018657	[Clostridium] acidurici 9a
+NC_018657	Clostridium acidurici 9a
 NC_018634	Chlamydia psittaci CP3
 NC_018680	Alteromonas macleodii str. 'Balearic Sea AD45'
 NC_012129	Borreliella valaisiana VS116
@@ -3884,7 +3884,7 @@ NC_024987	Enterobacter cloacae
 NC_025003	Enterobacter cloacae
 NC_019310	Erwinia amylovora
 NC_021922	Shigella flexneri
-NC_021185	[Haemophilus] parasuis
+NC_021185	Haemophilus parasuis
 NC_021230	Staphylococcus aureus
 NC_022598	Staphylococcus aureus
 NC_023385	Staphylococcus aureus
@@ -4607,7 +4607,7 @@ NG_047286	Klebsiella pneumoniae
 NG_047288	Klebsiella pneumoniae
 NG_047289	Klebsiella pneumoniae
 NG_047291	Klebsiella pneumoniae
-NG_047303	[Enterobacter] aerogenes
+NG_047303	Enterobacter aerogenes
 NG_047305	Proteus mirabilis
 NG_047322	Campylobacter jejuni
 NG_047324	Escherichia coli
@@ -4666,7 +4666,7 @@ NG_047595	Aeromonas salmonicida
 NG_047596	Salmonella sp. TC67
 NG_047599	Klebsiella pneumoniae
 NG_047603	Pasteurella multocida
-NG_047604	[Enterobacter] aerogenes
+NG_047604	Enterobacter aerogenes
 NG_047605	Salmonella enterica subsp. enterica serovar Typhimurium
 NG_047607	Morganella morganii
 NG_047612	Klebsiella pneumoniae
@@ -4677,7 +4677,7 @@ NG_047632	Staphylococcus aureus
 NG_047646	Pseudomonas aeruginosa
 NG_047652	Klebsiella pneumoniae
 NG_047653	Escherichia coli
-NG_047657	[Enterobacter] aerogenes
+NG_047657	Enterobacter aerogenes
 NG_047658	Bordetella bronchiseptica
 NG_047686	Escherichia coli
 NG_047694	Escherichia coli
@@ -4765,10 +4765,10 @@ NG_048023	Enterococcus faecalis
 NG_048024	Escherichia coli
 NG_048025	Escherichia coli
 NG_048037	Staphylococcus aureus
-NG_048041	[Enterobacter] aerogenes
+NG_048041	Enterobacter aerogenes
 NG_048046	Staphylococcus aureus
 NG_048048	Vibrio cholerae
-NG_048052	[Enterobacter] aerogenes
+NG_048052	Enterobacter aerogenes
 NG_048054	Proteus mirabilis
 NG_048069	Escherichia coli
 NG_048073	Campylobacter jejuni
@@ -4797,7 +4797,7 @@ NG_048115	Actinobacillus porcitonsillarum
 NG_048116	Actinobacillus pleuropneumoniae
 NG_048117	Bibersteinia trehalosi
 NG_048118	Salmonella enterica subsp. enterica serovar Choleraesuis
-NG_048119	[Haemophilus] parasuis
+NG_048119	Haemophilus parasuis
 NG_048120	Escherichia coli
 NG_048123	Aeromonas salmonicida subsp. salmonicida
 NG_048127	Corynebacterium glutamicum
@@ -4811,7 +4811,7 @@ NG_048154	Salmonella enterica subsp. enterica serovar Enteritidis
 NG_048157	Klebsiella pneumoniae
 NG_048159	Klebsiella pneumoniae
 NG_048161	Shigella flexneri 2b
-NG_048170	[Haemophilus] parasuis
+NG_048170	Haemophilus parasuis
 NG_048171	Actinobacillus pleuropneumoniae
 NG_048173	Pasteurella multocida
 NG_048174	Francisella tularensis
@@ -5106,7 +5106,7 @@ NG_050416	Staphylococcus haemolyticus
 NG_050417	Escherichia coli
 NG_050459	Escherichia coli
 NG_050460	Escherichia coli
-NG_050461	[Enterobacter] aerogenes
+NG_050461	Enterobacter aerogenes
 NG_050462	Klebsiella pneumoniae
 NG_050463	Klebsiella oxytoca
 NG_050467	Proteus mirabilis
@@ -5595,8 +5595,8 @@ NC_005005	Staphylococcus epidermidis ATCC 12228
 NC_005006	Staphylococcus epidermidis ATCC 12228
 NC_005007	Staphylococcus epidermidis ATCC 12228
 NC_005008	Staphylococcus epidermidis ATCC 12228
-NC_004632	[Pseudomonas syringae] pv. tomato str. DC3000
-NC_004633	[Pseudomonas syringae] pv. tomato str. DC3000
+NC_004632	Pseudomonas syringae pv. tomato str. DC3000
+NC_004633	Pseudomonas syringae pv. tomato str. DC3000
 NC_004703	Bacteroides thetaiotaomicron VPI-5482
 NC_004669	Enterococcus faecalis V583
 NC_004670	Enterococcus faecalis V583
@@ -5654,8 +5654,8 @@ NG_047997	uncultured bacterium
 NG_048036	uncultured bacterium
 NG_048104	uncultured bacterium
 NG_048156	uncultured bacterium
-NG_048162	[Pasteurella] aerogenes
-NG_048196	[Pasteurella] aerogenes
+NG_048162	Pasteurella aerogenes
+NG_048196	Pasteurella aerogenes
 NG_048309	IncQ plasmid pIE1120
 NG_048562	Plasmid pIP630
 NG_049352	Plasmid PDS075
@@ -5862,7 +5862,7 @@ NZ_CP016459	Blastomonas sp. RAC04
 NZ_CP016461	Blastomonas sp. RAC04
 NZ_CP016462	Blastomonas sp. RAC04
 NZ_CP016463	Bosea sp. RAC05
-NC_006578	[Bacillus thuringiensis] serovar konkukian str. 97-27
+NC_006578	Bacillus thuringiensis serovar konkukian str. 97-27
 NC_002128	Escherichia coli O157:H7 str. Sakai
 NC_008791	Yersinia enterocolitica subsp. enterocolitica 8081
 NC_009007	Rhodobacter sphaeroides 2.4.1
@@ -6768,7 +6768,7 @@ NG_047665	Corynebacterium jeikeium
 NG_048467	Enterococcus faecalis
 NG_048472	Enterococcus faecalis
 NG_051704	Photobacterium damselae subsp. piscicida
-NG_051881	[Enterobacter] aerogenes
+NG_051881	Enterobacter aerogenes
 NZ_CP009655	Francisella sp. CA97-1460
 NG_051911	Citrobacter freundii
 NG_052065	Staphylococcus aureus
@@ -7013,7 +7013,7 @@ NZ_CP011049	Cronobacter sakazakii
 NZ_CP011050	Cronobacter sakazakii
 NZ_CP011582	Enterobacter cloacae
 NZ_CP011583	Enterobacter cloacae
-NZ_CP011573	[Enterobacter] aerogenes
+NZ_CP011573	Enterobacter aerogenes
 NZ_CP006779	Yersinia pestis 1412
 NZ_CP006780	Yersinia pestis 1412
 NZ_CP011651	Citrobacter freundii
@@ -7293,7 +7293,7 @@ NZ_CP016445	Edwardsiella piscicida
 NZ_CP012488	Enterobacter sp. FY-07
 NZ_CP012489	Enterobacter sp. FY-07
 NZ_CP012490	Enterobacter sp. FY-07
-NZ_CP014747	[Enterobacter] aerogenes
+NZ_CP014747	Enterobacter aerogenes
 NZ_CP014767	Pontibacter akesuensis
 NZ_CP016939	Yersinia enterocolitica
 NZ_CP016941	Yersinia enterocolitica
@@ -7385,7 +7385,7 @@ NZ_CP018066	Enterococcus faecium
 NZ_CP018067	Enterococcus faecium
 NZ_CP018068	Enterococcus faecium
 NZ_CP018069	Enterococcus faecium
-NZ_CP011540	[Enterobacter] aerogenes
+NZ_CP011540	Enterobacter aerogenes
 NZ_CP017058	Citrobacter freundii
 NZ_CP017059	Citrobacter freundii
 NZ_CP017182	Enterobacter kobei
@@ -7621,7 +7621,7 @@ NG_052433	Klebsiella pneumoniae
 NG_052436	uncultured bacterium
 NG_052486	Salmonella enterica subsp. enterica serovar Virchow
 NG_052487	Salmonella enterica subsp. enterica serovar Typhimurium
-NG_052498	[Pasteurella] aerogenes
+NG_052498	Pasteurella aerogenes
 NG_052538	Salmonella enterica subsp. enterica serovar Newport str. SL254
 NG_052583	Escherichia coli APEC O1
 NC_021086	Propionibacterium acnes HL096PA1
@@ -7792,7 +7792,7 @@ NG_047376	Plasmid pUB110
 NG_047559	Escherichia coli
 NG_047655	Pseudomonas aeruginosa
 NG_047723	Vibrio cholerae non-O1/non-O139
-NG_047747	[Enterobacter] aerogenes
+NG_047747	Enterobacter aerogenes
 NG_047770	Klebsiella pneumoniae
 NG_047842	Lactobacillus reuteri
 NG_047897	Mycobacterium abscessus subsp. bolletii F1725
