@@ -15,7 +15,8 @@ kdf.drop(["chr", "ignore", "contig", "color", "start", "end"], 1, inplace=True)
 
 print("read filtered matches")
 # read the matches and fix up the names
-mdf = pd.read_csv("filtered_matches.txt", sep='\t')
+mdf = pd.read_csv("../NCBI_Plasmids/taxonAnalysis/mosaic_fragments_BLAST.txt",
+        sep='\t')
 fixed = mdf["qseqid"].apply(lambda x : x.split("|")[1].split(".")[0])
 mdf["qseqid"] = fixed
 fixed = mdf["sseqid"].apply(lambda x : x.split("|")[1].split(".")[0])
@@ -43,14 +44,22 @@ df.drop("name", 1, inplace=True);
 df.rename(columns = { "organism" : "sorganism"}, inplace=True)
 df["color"] = df.apply(lambda x : "color=black" if x['qorganism'] == x['sorganism'] else "color=red", axis=1)
 
+print(df.head())
+
+# deprecated; all the processing is done by mitch's code
+"""
 print("filtering out redundant plasmids")
 # remove any matches that are > 50% length of either
+qssame = df["qseqid"] == df["sseqid"]
 qscrit = df["alength"] < df["slength"] * .5
 qqcrit = df["alength"] < df["qlength"] * .5
+scrit = df["alength"] > 0
+scrit = df["alength"] > 1000
 scrit = df["alength"] > 5000
 print(df.size)
-df = df[(qscrit) & (qqcrit) & (scrit)]
+df = df[(qssame) & (qscrit) & (qqcrit) & (scrit)]
 print(df.size)
+"""
 
 print("writing to 'links.txt'")
 links = df[["qseqid", "qstart", "qend", "sseqid", "sstart", "send", "color"]].copy()

@@ -2,8 +2,9 @@
 
 import Bio
 from Bio import SeqIO
+import pandas as pd
 
-gbFile='/work/data/NCBI_plasmids/plasmid/ncbi_plasmid.gbff'
+gbFile = '/work/data/NCBI_plasmids/plasmid/ncbi_plasmid.gbff'
 
 colors = {
     "Yersinia" : "50,0,15",
@@ -20,10 +21,31 @@ colors = {
     "Lactobacillus" : "5,20,45"
 }
 
+data = []
+
+print("reading genbank file")
 for record in SeqIO.parse(gbFile, "genbank"):
-    id=record.id.split('.')[0]
-    color="255,255,255"
-    genus=record.annotations["organism"].split(" ")[0]
+    id = record.id.split('.')[0]
+    color = "255,255,255"
+    genus = record.annotations["organism"].split(" ")[0]
+    taxonomy = '_'.join(record.annotations["taxonomy"])
     if genus in colors.keys():
-        color=colors[genus]
-    print("chr - {} {} 1 {} {}".format(id, id, len(record), color))
+        color = colors[genus]
+    data.append(["chr", "-", id, id, 1, len(record), color, taxonomy])
+    #print("chr - {} {} 1 {} {} {}".format(id, id, len(record), color, taxonomy))
+
+print("making dataframe")
+df = pd.DataFrame(data, 
+        columns=["chr", "-", "id", "id2", "1", "seqlen", "rgb", "taxstring"])
+print("saving txt file")
+df.to_csv("karyotype.txt", columns=["chr", "-", "id", "id2", "1", "seqlen", "rgb"],
+        sep=' ', header=False, index=False)
+print("sorting by taxonomy and saving")
+df.sort_values(by="taxstring", inplace=True)
+df.to_csv("karyotype_tax.txt", columns=["chr", "-", "id", "id2", "1", "seqlen", "rgb"],
+        sep=' ', header=False, index=False)
+print("sorting by length and saving")
+df.sort_values(by="seqlen", inplace=True)
+df.to_csv("karyotype_len.txt", columns=["chr", "-", "id", "id2", "1", "seqlen", "rgb"],
+        sep=' ', header=False, index=False)
+
