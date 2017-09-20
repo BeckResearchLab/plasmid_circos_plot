@@ -38,7 +38,7 @@ print("making dataframe")
 df = pd.DataFrame(data, 
         columns=["chr", "-", "id", "id2", "1", "seqlen", "rgb", "taxstring"])
 print("saving txt file")
-df.to_csv("karyotype.txt", columns=["chr", "-", "id", "id2", "1", "seqlen", "rgb"],
+df.to_csv("karyotype_rand.txt", columns=["chr", "-", "id", "id2", "1", "seqlen", "rgb"],
         sep=' ', header=False, index=False)
 print("sorting by taxonomy and saving")
 df.sort_values(by="taxstring", inplace=True)
