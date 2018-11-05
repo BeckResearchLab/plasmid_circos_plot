@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-FILTER_LENGTH = 5000
+FILTER_LENGTH = 500
 
 import csv
 
@@ -17,7 +17,7 @@ kdf.drop(["chr", "ignore", "contig", "color", "start", "end"], 1, inplace=True)
 
 print("read filtered matches")
 # read the matches and fix up the names
-mdf = pd.read_csv("../NCBI_Plasmids/taxonAnalysis/mosaic_fragments_BLAST.txt",
+mdf = pd.read_csv("../NCBI_Plasmids/blast_for_dave.txt",
         sep='\t')
 fixed = mdf["qseqid"].apply(lambda x : x.split("|")[1].split(".")[0])
 mdf["qseqid"] = fixed
@@ -68,6 +68,6 @@ print(df.size)
 df = df[(scrit)]
 print(df.size)
 
-print("writing to 'links.txt'")
+print("writing to 'links2.txt'")
 links = df[["qseqid", "qstart", "qend", "sseqid", "sstart", "send", "color"]].copy()
-links.to_csv("links.txt", sep='\t', quoting=csv.QUOTE_NONE, header=False, index=False)
+links.to_csv("links2.txt", sep='\t', quoting=csv.QUOTE_NONE, header=False, index=False)

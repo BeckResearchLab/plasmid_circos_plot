@@ -1,5 +1,5 @@
 # plasmid_circos_plot
-Circos plot showing possible recombination sites from NCBI all plasmid database
+Circos plot and summary charts describing possible recombination sites from NCBI all plasmid database
 
 ### You will need:
 * circos
@@ -15,3 +15,4 @@ Circos plot showing possible recombination sites from NCBI all plasmid database
 * edit circos.conf and update the chromosomes list
 * select one of the karyotype_X.txt files and copy to karyotype.txt
 * ./run
+* python make_figure_1.py -o Figure1.png links.txt ncbi_plasmids.genbank

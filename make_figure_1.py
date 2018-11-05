@@ -24,14 +24,22 @@ def expand_covered(old, new, direct):
 
 def coverage(locus, links, length):
     try:
-        covered = np.ones(length)
+        covered = np.ones(int(length))
     except KeyError:
         print("Locus:{}\tlength:{}\n".format(locus, length))
         exit()
-
+    t = open("test.txt", 'w')
+    t.write(str(len(str(covered))))
     regions = links[links['plasmid1'] == locus][['start1', 'end1']]
+    t.write(regions.to_string())
+    t.write("\n")
     for i, row in regions.iterrows():
         covered[row['start1']-1:row['end1']-1] = np.zeros(row['end1']-row['start1'])
+        unique, counts = np.unique(covered, return_counts=True)
+        x = dict(zip(unique, counts))
+        t.write(str(x[0]))
+        t.write("\n")
+    exit()
     return 1-(covered.sum()/length)
 
 def scoverage(locus, links):
@@ -46,7 +54,8 @@ def numCov(locus, links):
 def import_links(linkFile):
     linkCols = ['plasmid1', 'start1', 'end1', 'plasmid2', 'start2', 'end2', 'relationship']
     linkDF = pd.read_table(linkFile, names=linkCols, sep="\t")
-    linkDF.replace({'relationship' : {'color=red' : 'interspecies', 'color=black' : 'intraspecies'}}, inplace=True)
+#    linkDF = linkDF.replace(to_replace="color=red", value="interspecies")
+#    linkDF = linkDF.replace(to_replace="color=black", value="intraspecies")
     linkDF['length'] = linkDF['end1'] - linkDF['start1']
     plasDF = pd.DataFrame(linkDF.plasmid1.unique(), columns=['locus'])
     return linkDF, plasDF
@@ -57,17 +66,22 @@ def plotter(plasDF, linkDF, outfile):
     fig = plt.figure()
     ax1 = plt.subplot(221)
     ax2 = plt.subplot(223)
-    ax3 = plt.subplot(122)
+    ax3 = plt.subplot(222)
+    ax4 = plt.subplot(224)
 
     ax1.hist(plasDF['cprop'], bins=20, color='c')
     n2, bins2, patches2 = ax2.hist(plasDF['links'], bins=20, color='m')
     linkMax = plasDF['links'].max()
     ax3data = linkDF.groupby('relationship').count()['plasmid1']
-    bar1 = ax3.bar([0.3, 0.3], height=[ax3data['intraspecies'], ax3data['intraspecies']], color='c', width=[0.2, 0.2],
+    deduplicated = linkDF.drop_duplicates(subset=['plasmid1', 'plasmid2'])
+    connectionCounts = deduplicated.groupby('plasmid1').count()
+    bar1 = ax3.bar([0.3, 0.3], height=[ax3data['color=black'], ax3data['color=black']], color='c', width=[0.2, 0.2],
             align='center')
-    bar2 = ax3.bar([0.3, 0.3], height=[ax3data['interspecies'], ax3data['interspecies']],
-            bottom=[ax3data['intraspecies'], ax3data['intraspecies']], color='m', width=[0.2, 0.2], align='center')
+    bar2 = ax3.bar([0.3, 0.3], height=[ax3data['color=red'], ax3data['color=red']],
+            bottom=[ax3data['color=black'], ax3data['color=black']], color='m', width=[0.2, 0.2], align='center')
     ax3.legend((bar1, bar2), ("Intraspecies", "Interspecies"))
+    n4, bins4, patches4 = ax4.hist(connectionCounts['plasmid2'], bins=20, color='c')
+    print(map(lambda x: int(x), bins4))
 
 #    bxDta = [linkDF[linkDF['relationship'] == 'intraspecies']['length'], linkDF[linkDF['relationship'] == 'interspecies']['length']]
 #    ax3.boxplot(bxDta, labels=['intraspecies', 'interspecies'], boxprops=dict(color='c'),
@@ -96,10 +110,18 @@ def plotter(plasDF, linkDF, outfile):
     ax3.set_xticklabels(["Plasmid links"])
     ax3.set_xticks([0.3])
 
-
+    ax4.set_xlabel("Unique plasmids linked")
+    ax4.set_xticks(map(lambda x: int(x), bins4))
+    for label in ax4.xaxis.get_ticklabels():
+        if counter % 5 != 0:
+            label.set_visible(False)
+        counter += 1
+    ax4.set_ylabel("Number of plasmids")
 
     plt.tight_layout()
     plt.savefig(outfile)
+
+    return connectionCounts['plasmid2'].median()
 
 parser = argparse.ArgumentParser(description="Make figure 1")
 
@@ -123,4 +145,6 @@ print(plasmids[plasmids['links'] > 10000])
 
 print("Proportion median:{}\nLinks median:{}\n".format(plasmids['cprop'].median(), plasmids['links'].median()))
 
-plotter(plasmids, links, args.out)
+medianUnique = plotter(plasmids, links, args.out)
+
+print("Unique linked plasmids median:{}".format(medianUnique))
